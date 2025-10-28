@@ -1,0 +1,46 @@
+<Window x:Class="WindowsDebloater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Junktoys" 
+        Height="700" 
+        Width="1100"
+        MinHeight="600"
+        MinWidth="900">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Simplified Navigation -->
+        <Border Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+            <StackPanel Margin="10">
+                <TextBlock Text="🧹 Junktoys" FontSize="20" FontWeight="Bold" Margin="10"/>
+                
+                <Button Content="⚡ Quick Clean" Margin="5" Padding="12,8" Click="QuickClean_Click" 
+                       Style="{StaticResource AccentButtonStyle}"/>
+                <Separator Margin="10,15"/>
+                
+                <RadioButton x:Name="BackgroundAppsBtn" Content="Background Apps" Style="{StaticResource NavigationRadioButtonStyle}"
+                           IsChecked="True" Checked="Navigation_Checked" Tag="BackgroundApps"/>
+                <RadioButton Content="Bloatware" Style="{StaticResource NavigationRadioButtonStyle}"
+                           Checked="Navigation_Checked" Tag="Bloatware"/>
+                <RadioButton Content="Startup" Style="{StaticResource NavigationRadioButtonStyle}"
+                           Checked="Navigation_Checked" Tag="Startup"/>
+                <RadioButton Content="Services" Style="{StaticResource NavigationRadioButtonStyle}"
+                           Checked="Navigation_Checked" Tag="Services"/>
+                <RadioButton Content="⚡ Advanced" Style="{StaticResource NavigationRadioButtonStyle}"
+                           Checked="Navigation_Checked" Tag="Advanced" FontWeight="Bold"/>
+                <Separator Margin="10,15"/>
+                <RadioButton Content="Settings" Style="{StaticResource NavigationRadioButtonStyle}"
+                           Checked="Navigation_Checked" Tag="Settings"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content -->
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
