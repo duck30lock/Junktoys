@@ -86,7 +86,7 @@
                 <TextBlock Text="Application Version: 1.0.0" 
                           FontSize="13"
                           Margin="0,5"/>
-                <TextBlock Text="© 2024 Junktoys Team" 
+                <TextBlock Text="© 2025 Junktoys Team" 
                           FontSize="13"
                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
                           Margin="0,5"/>
