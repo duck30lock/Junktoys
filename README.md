@@ -1,17 +1,17 @@
-# 🧹 Junktoys - Ultimate Windows Optimizer
+#  Junktoys - Ultimate Windows Optimizer
 
 A powerful Windows debloating and optimization tool with auto dark mode and advanced features.
 
-## ✨ Features
+## Features
 
 ### Basic Tools
-- **⚡ Quick Clean**: One-click optimization (kills heavy apps + clears temp files)
+- **Quick Clean**: One-click optimization (kills heavy apps + clears temp files)
 - **Background Apps Manager**: Auto-kill processes using >500MB RAM
 - **Bloatware Detector**: Find and remove pre-installed bloatware & Edge
 - **Startup Manager**: Control what programs launch at startup
 - **Services Optimizer**: Disable unnecessary Windows services
 
-### 🚀 Advanced Optimizations (NEW!)
+### Advanced Optimizations (NEW!)
 - **Full Optimization Pack**: Apply all tweaks with one click
 - **Disable Telemetry**: Stop Windows data collection completely
 - **Disable Cortana**: Remove Cortana permanently
@@ -29,7 +29,7 @@ A powerful Windows debloating and optimization tool with auto dark mode and adva
 - **Modern Interface**: Clean, easy-to-use design
 - **Fast Performance**: Optimized build (~2.6MB, loads instantly)
 
-## 📥 Download & Run
+## Download & Run
 
 ### For Users (GitHub Releases)
 
@@ -48,7 +48,7 @@ A powerful Windows debloating and optimization tool with auto dark mode and adva
 - Administrator privileges (for most features)
 - No .NET installation required
 
-## 🔨 Building from Source
+## Building from Source
 
 ### Prerequisites
 - .NET 8.0 SDK
