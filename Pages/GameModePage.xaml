@@ -1,0 +1,159 @@
+<Page x:Class="WindowsDebloater.Pages.GameModePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      Title="GameMode">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,30,40,30">
+            <!-- Header -->
+            <TextBlock Text="🎮 Game Mode Booster" 
+                      FontSize="28" 
+                      FontWeight="SemiBold"
+                      Margin="0,0,0,10"/>
+            <TextBlock Text="Optimize your system for maximum gaming performance" 
+                      FontSize="14" 
+                      Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                      Margin="0,0,0,30"/>
+
+            <!-- Status Card -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1"
+                   CornerRadius="8"
+                   Padding="20"
+                   Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock x:Name="GameModeStatusText" 
+                              Text="Game Mode: OFF" 
+                              FontSize="18" 
+                              FontWeight="Bold"
+                              Foreground="#FF6B6B"/>
+                    <TextBlock x:Name="GameModeSubText" 
+                              Text="Click the button below to activate" 
+                              FontSize="13" 
+                              Margin="0,5,0,0"
+                              Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Controls -->
+            <Button x:Name="ToggleGameModeButton"
+                   Content="🚀 Activate Game Mode" 
+                   Click="ToggleGameMode_Click"
+                   Margin="0,0,0,20"
+                   Padding="25,12"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Left"
+                   Style="{StaticResource AccentButtonStyle}"/>
+
+            <!-- Settings Grid -->
+            <TextBlock Text="Game Mode Settings" 
+                      FontSize="18" 
+                      FontWeight="SemiBold"
+                      Margin="0,10,0,15"/>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox x:Name="KillBackgroundCheckBox" 
+                         Content="Kill non-essential processes" 
+                         Grid.Row="0" Grid.Column="0"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+                <CheckBox x:Name="MaxPriorityCheckBox" 
+                         Content="Set high CPU priority" 
+                         Grid.Row="0" Grid.Column="1"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+                
+                <CheckBox x:Name="DisableUpdatesCheckBox" 
+                         Content="Pause Windows Update" 
+                         Grid.Row="1" Grid.Column="0"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+                <CheckBox x:Name="OptimizeGPUCheckBox" 
+                         Content="Optimize GPU settings" 
+                         Grid.Row="1" Grid.Column="1"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+
+                <CheckBox x:Name="NetworkBoostCheckBox" 
+                         Content="Network latency optimization" 
+                         Grid.Row="2" Grid.Column="0"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+                <CheckBox x:Name="PowerPlanCheckBox" 
+                         Content="Ultimate Performance mode" 
+                         Grid.Row="2" Grid.Column="1"
+                         IsChecked="True"
+                         Margin="0,0,0,15"/>
+            </Grid>
+
+            <!-- Active Games List -->
+            <TextBlock Text="Running Games" 
+                      FontSize="18" 
+                      FontWeight="SemiBold"
+                      Margin="0,20,0,15"/>
+            
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1"
+                   CornerRadius="4"
+                   Padding="0">
+                <ListView x:Name="GamesListView"
+                         Height="200"
+                         BorderThickness="0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Game" Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding GameName}" FontWeight="SemiBold"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="CPU %" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding CpuUsage}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Memory (MB)" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MemoryMB}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Priority" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Priority}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+
+            <Button Content="🔄 Refresh Games" 
+                   Click="RefreshGames_Click"
+                   Margin="0,10,0,0"
+                   Padding="15,8"
+                   HorizontalAlignment="Left"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

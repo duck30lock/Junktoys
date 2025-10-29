@@ -1,0 +1,115 @@
+<Page x:Class="WindowsDebloater.Pages.SystemTweakerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      Title="SystemTweaker">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,30,40,30">
+            <TextBlock Text="⚡ System Tweaker Pro" FontSize="28" FontWeight="SemiBold" Margin="0,0,0,10"/>
+            <TextBlock Text="Advanced Windows tweaks and hidden settings" FontSize="14" 
+                      Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" Margin="0,0,0,30"/>
+
+            <!-- Warning -->
+            <Border Background="#FFF3CD" BorderBrush="#FFC107" BorderThickness="1" 
+                   CornerRadius="4" Padding="15" Margin="0,0,0,20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="⚠️" FontSize="20" Margin="0,0,10,0"/>
+                    <TextBlock Text="Advanced tweaks! Create a restore point before proceeding." 
+                              TextWrapping="Wrap" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Performance Tweaks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="⚡ Performance Tweaks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <CheckBox Content="Disable Hibernation (frees up disk space)" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable SuperFetch/Prefetch" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Windows Search Indexing" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Fast Startup" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Page File (requires 16GB+ RAM)" Margin="0,0,0,15"/>
+                    <Button Content="Apply Performance Tweaks" Click="ApplyPerformance_Click" Padding="15,8" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Privacy Tweaks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="🔒 Privacy Tweaks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <CheckBox Content="Block all telemetry domains (hosts file)" IsChecked="True" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Windows Error Reporting" IsChecked="True" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Customer Experience Improvement" IsChecked="True" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Diagnostics Tracking" IsChecked="True" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Bing in Start Menu" IsChecked="True" Margin="0,0,0,15"/>
+                    <Button Content="Apply Privacy Tweaks" Click="ApplyPrivacy_Click" Padding="15,8" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- UI Tweaks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="🎨 UI Tweaks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <CheckBox Content="Show file extensions" Margin="0,0,0,10"/>
+                    <CheckBox Content="Show hidden files" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable animations for best performance" Margin="0,0,0,10"/>
+                    <CheckBox Content="Classic context menu (Windows 11)" Margin="0,0,0,10"/>
+                    <CheckBox Content="Remove 3D Objects from Explorer" Margin="0,0,0,15"/>
+                    <Button Content="Apply UI Tweaks" Click="ApplyUI_Click" Padding="15,8" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Network Tweaks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="🌐 Network Tweaks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <CheckBox Content="Increase network buffer size" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable bandwidth limiting" Margin="0,0,0,10"/>
+                    <CheckBox Content="Optimize TCP/IP stack" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable QoS packet scheduler" Margin="0,0,0,15"/>
+                    <Button Content="Apply Network Tweaks" Click="ApplyNetwork_Click" Padding="15,8" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Security Tweaks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="🛡️ Security Tweaks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <CheckBox Content="Enable God Mode folder" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable Remote Assistance" Margin="0,0,0,10"/>
+                    <CheckBox Content="Require Ctrl+Alt+Del at logon" Margin="0,0,0,10"/>
+                    <CheckBox Content="Disable AutoRun for all drives" Margin="0,0,0,15"/>
+                    <Button Content="Apply Security Tweaks" Click="ApplySecurity_Click" Padding="15,8" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Quick Actions -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="🚀 Quick Actions" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    <Button Content="⚡ Apply All Recommended Tweaks" Click="ApplyAll_Click" Padding="20,10" Margin="0,0,0,10" 
+                           HorizontalAlignment="Left" Style="{StaticResource AccentButtonStyle}" FontWeight="Bold"/>
+                    <Button Content="↩️ Restore Windows Defaults" Click="RestoreDefaults_Click" Padding="20,10" 
+                           HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

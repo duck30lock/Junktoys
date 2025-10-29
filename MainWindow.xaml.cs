@@ -21,12 +21,26 @@ namespace WindowsDebloater
             {
                 Page page = rb.Tag?.ToString() switch
                 {
+                    // Original Features
                     "BackgroundApps" => new BackgroundAppsPage(),
                     "Bloatware" => new BloatwareDetectorPage(),
                     "Startup" => new StartupManagerPage(),
                     "Services" => new ServicesPage(),
                     "Advanced" => new AdvancedPage(),
                     "Settings" => new SettingsPage(),
+                    
+                    // New Crazy Features
+                    "GameMode" => new GameModePage(),
+                    "RAMTurbo" => new RAMTurboPage(),
+                    "ProcessFreezer" => new ProcessFreezerPage(),
+                    "NetworkTools" => new NetworkToolsPage(),
+                    "Monitor" => new MonitorDashboardPage(),
+                    "AutoPilot" => new AutoPilotPage(),
+                    "RegistryCleaner" => new RegistryCleanerPage(),
+                    "Profiles" => new ProfilesPage(),
+                    "DiskAnalyzer" => new DiskAnalyzerPage(),
+                    "SystemTweaker" => new SystemTweakerPage(),
+                    
                     _ => null
                 };
 

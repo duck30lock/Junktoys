@@ -1,0 +1,197 @@
+<Page x:Class="WindowsDebloater.Pages.NetworkToolsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      Title="NetworkTools">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,30,40,30">
+            <!-- Header -->
+            <TextBlock Text="🌐 Network Tools Suite" 
+                      FontSize="28" 
+                      FontWeight="SemiBold"
+                      Margin="0,0,0,10"/>
+            <TextBlock Text="Optimize network settings and monitor connection" 
+                      FontSize="14" 
+                      Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                      Margin="0,0,0,30"/>
+
+            <!-- Quick DNS Switcher -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="DNS Switcher" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Content="☁️ Cloudflare (1.1.1.1)" 
+                               Click="SetCloudflare_Click" Padding="15,10" Margin="0,0,10,0"/>
+                        <Button Grid.Column="1" Content="🔍 Google (8.8.8.8)" 
+                               Click="SetGoogle_Click" Padding="15,10" Margin="0,0,10,0"/>
+                        <Button Grid.Column="2" Content="🛡️ Quad9 (9.9.9.9)" 
+                               Click="SetQuad9_Click" Padding="15,10" Margin="0,0,10,0"/>
+                        <Button Grid.Column="3" Content="↩️ Reset to Auto" 
+                               Click="ResetDNS_Click" Padding="15,10"/>
+                    </Grid>
+
+                    <TextBlock x:Name="CurrentDNSText" 
+                              Text="Current DNS: Automatic" 
+                              Margin="0,15,0,0" 
+                              FontSize="13"
+                              Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Network Speed Monitor -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Network Speed Monitor" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <TextBlock Text="Download Speed" FontSize="14" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="DownloadSpeedText" 
+                                      Text="0 KB/s" 
+                                      FontSize="32" 
+                                      FontWeight="Bold" 
+                                      Foreground="#00D900"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Upload Speed" FontSize="14" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="UploadSpeedText" 
+                                      Text="0 KB/s" 
+                                      FontSize="32" 
+                                      FontWeight="Bold" 
+                                      Foreground="#FF6B6B"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Button Content="🔄 Start Monitoring" 
+                           x:Name="MonitorButton"
+                           Click="ToggleMonitoring_Click" 
+                           Margin="0,15,0,0" 
+                           Padding="15,8"
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource AccentButtonStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Ping Test -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Ping Test" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock Text="Target:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox x:Name="PingTargetTextBox" 
+                                Text="8.8.8.8" 
+                                Width="150" 
+                                Margin="0,0,10,0"/>
+                        <Button Content="📡 Ping" 
+                               Click="Ping_Click" 
+                               Padding="15,8"
+                               Style="{StaticResource AccentButtonStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock x:Name="PingResultText" 
+                              Text="No ping test performed yet" 
+                              FontSize="13"
+                              Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Network Optimization -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Network Optimizations" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <Button Content="⚡ Apply Gaming Optimizations" 
+                           Click="ApplyGamingOptimizations_Click" 
+                           Padding="15,10" 
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource AccentButtonStyle}"/>
+
+                    <TextBlock Text="• Reduce network latency" FontSize="13" Margin="20,5,0,5"/>
+                    <TextBlock Text="• Disable network throttling" FontSize="13" Margin="20,0,0,5"/>
+                    <TextBlock Text="• Optimize TCP/IP settings" FontSize="13" Margin="20,0,0,5"/>
+                    <TextBlock Text="• Disable Nagle's algorithm" FontSize="13" Margin="20,0,0,10"/>
+
+                    <Button Content="🔄 Reset Network Settings" 
+                           Click="ResetNetwork_Click" 
+                           Padding="15,10"
+                           HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Active Connections -->
+            <TextBlock Text="Active Network Connections" FontSize="18" FontWeight="SemiBold" Margin="0,10,0,15"/>
+            
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="4" Padding="0">
+                <ListView x:Name="ConnectionsListView"
+                         Height="200"
+                         BorderThickness="0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Protocol" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Protocol}" FontWeight="SemiBold"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Local Address" Width="150">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding LocalAddress}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Remote Address" Width="150">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding RemoteAddress}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="State" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding State}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+
+            <Button Content="🔄 Refresh Connections" 
+                   Click="RefreshConnections_Click"
+                   Margin="0,10,0,0"
+                   Padding="15,8"
+                   HorizontalAlignment="Left"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,162 @@
+<Page x:Class="WindowsDebloater.Pages.AutoPilotPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      Title="AutoPilot">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,30,40,30">
+            <!-- Header -->
+            <TextBlock Text="🤖 Auto-Pilot Mode" 
+                      FontSize="28" 
+                      FontWeight="SemiBold"
+                      Margin="0,0,0,10"/>
+            <TextBlock Text="Automated optimization scheduling and smart resource management" 
+                      FontSize="14" 
+                      Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                      Margin="0,0,0,30"/>
+
+            <!-- Status Card -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Auto-Pilot Status: " FontSize="16" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="StatusText" 
+                                  Text="DISABLED" 
+                                  FontSize="16" 
+                                  FontWeight="Bold" 
+                                  Foreground="#FF6B6B" 
+                                  Margin="10,0,0,0"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock x:Name="NextRunText" 
+                              Text="Next scheduled run: Not scheduled" 
+                              FontSize="13" 
+                              Margin="0,10,0,0"
+                              Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Main Control -->
+            <Button x:Name="ToggleAutoPilotButton"
+                   Content="🚀 Enable Auto-Pilot" 
+                   Click="ToggleAutoPilot_Click"
+                   Margin="0,0,0,30"
+                   Padding="25,12"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Left"
+                   Style="{StaticResource AccentButtonStyle}"/>
+
+            <!-- Schedule Settings -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Schedule Settings" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <CheckBox x:Name="DailyCleanCheckBox" 
+                             Content="Daily optimization at scheduled time" 
+                             IsChecked="True"
+                             Margin="0,0,0,15"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="20,0,0,15">
+                        <TextBlock Text="Time:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="ScheduleTimeComboBox" Width="100">
+                            <ComboBoxItem Content="1:00 AM"/>
+                            <ComboBoxItem Content="2:00 AM"/>
+                            <ComboBoxItem Content="3:00 AM" IsSelected="True"/>
+                            <ComboBoxItem Content="4:00 AM"/>
+                            <ComboBoxItem Content="5:00 AM"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <CheckBox x:Name="WeeklyDeepCleanCheckBox" 
+                             Content="Weekly deep clean (Sundays)" 
+                             IsChecked="True"
+                             Margin="0,0,0,10"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Smart Optimization -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Smart Optimization" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <CheckBox x:Name="LowBatteryCheckBox" 
+                             Content="Auto-kill apps when battery &lt; 20%" 
+                             IsChecked="True"
+                             Margin="0,0,0,10"/>
+
+                    <CheckBox x:Name="HighRAMCheckBox" 
+                             Content="Clear RAM when usage &gt; 85%" 
+                             IsChecked="True"
+                             Margin="0,0,0,10"/>
+
+                    <CheckBox x:Name="IdleOptimizeCheckBox" 
+                             Content="Optimize when system is idle for 10+ minutes" 
+                             IsChecked="True"
+                             Margin="0,0,0,10"/>
+
+                    <CheckBox x:Name="NetworkIdleCheckBox" 
+                             Content="Optimize during low network activity" 
+                             IsChecked="False"
+                             Margin="0,0,0,10"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Automated Tasks -->
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Automated Tasks" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <CheckBox Content="Clear temp files" IsChecked="True" Margin="0,0,0,10"/>
+                            <CheckBox Content="Empty recycle bin" IsChecked="True" Margin="0,0,0,10"/>
+                            <CheckBox Content="Clear browser cache" IsChecked="True" Margin="0,0,0,10"/>
+                            <CheckBox Content="Optimize SSD (TRIM)" IsChecked="True" Margin="0,0,0,10"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <CheckBox Content="Kill heavy apps" IsChecked="True" Margin="0,0,0,10"/>
+                            <CheckBox Content="Clear standby memory" IsChecked="True" Margin="0,0,0,10"/>
+                            <CheckBox Content="Defragment registry" IsChecked="False" Margin="0,0,0,10"/>
+                            <CheckBox Content="Update blocklists" IsChecked="True" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Activity Log -->
+            <TextBlock Text="Recent Activity" FontSize="18" FontWeight="SemiBold" Margin="0,10,0,15"/>
+            
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                   BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                   BorderThickness="1" CornerRadius="4" Padding="0">
+                <ListBox x:Name="ActivityLogListBox"
+                        Height="200"
+                        BorderThickness="0">
+                    <ListBoxItem>No activity yet - Enable Auto-Pilot to start</ListBoxItem>
+                </ListBox>
+            </Border>
+
+            <Button Content="🗑️ Clear Log" 
+                   Click="ClearLog_Click"
+                   Margin="0,10,0,0"
+                   Padding="15,8"
+                   HorizontalAlignment="Left"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

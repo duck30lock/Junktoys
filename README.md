@@ -4,6 +4,88 @@ A powerful Windows debloating and optimization tool with auto dark mode and adva
 
 ## Features
 
+### 🔥 NEW CRAZY FEATURES! 🔥
+
+#### 🎮 Game Mode Booster
+- One-click performance mode for gaming
+- Auto-kill non-gaming processes
+- Set high CPU priority for games
+- Pause Windows Update during gaming
+- GPU & network optimization
+- Automatic game detection
+
+#### 💾 RAM Turbo
+- Real-time RAM usage monitoring
+- Aggressive memory compression
+- Auto-clear RAM at threshold
+- Visual RAM usage graphs
+- Top memory consumers list
+- Standby memory clearing
+
+#### ❄️ Process Freezer
+- Suspend/resume processes instead of killing
+- Keep apps open without using resources
+- Batch freeze non-essential apps
+- Memory usage tracking for frozen processes
+- Safe process detection
+
+#### 🌐 Network Tools Suite
+- Quick DNS switcher (Cloudflare, Google, Quad9)
+- Real-time network speed monitor
+- Ping test utility
+- Gaming network optimizations
+- Active connections viewer
+- Reset network settings
+
+#### 📊 System Monitor Dashboard
+- Real-time CPU/GPU/RAM/Disk monitoring
+- Temperature monitoring (CPU & GPU)
+- System information display
+- Top resource consumers
+- Live performance graphs
+- Uptime tracking
+
+#### 🤖 Auto-Pilot Mode
+- Scheduled optimizations (daily/weekly)
+- Smart resource management
+- Auto-kill apps on low battery
+- Auto-clear RAM at high usage
+- Idle-time optimization
+- Activity logging
+
+#### 🧹 Registry Turbo Cleaner
+- Deep registry scan
+- Remove invalid entries
+- One-click registry optimization
+- Automatic backup creation
+- Registry compaction
+- Permission repair
+
+#### 💼 Custom Profiles
+- Save/load optimization profiles
+- Preset profiles (Gaming, Work, Battery Saver)
+- Profile export/import
+- Quick profile switching
+- Auto-apply on startup
+
+#### 📁 Disk Space Analyzer
+- Visual storage analysis
+- Largest folders detection
+- Drive usage statistics
+- Quick clean options
+- Empty recycle bin
+- Clear browser cache
+
+#### ⚡ System Tweaker Pro
+- Advanced Windows tweaks
+- Hidden settings unlocked
+- Performance optimizations
+- Privacy enhancements
+- UI customization
+- Network tweaks
+- Security hardening
+- One-click apply all
+
 ### Basic Tools
 - **Quick Clean**: One-click optimization (kills heavy apps + clears temp files)
 - **Background Apps Manager**: Auto-kill processes using >500MB RAM
@@ -11,7 +93,7 @@ A powerful Windows debloating and optimization tool with auto dark mode and adva
 - **Startup Manager**: Control what programs launch at startup
 - **Services Optimizer**: Disable unnecessary Windows services
 
-### Advanced Optimizations (NEW!)
+### Advanced Optimizations
 - **Full Optimization Pack**: Apply all tweaks with one click
 - **Disable Telemetry**: Stop Windows data collection completely
 - **Disable Cortana**: Remove Cortana permanently
@@ -27,7 +109,7 @@ A powerful Windows debloating and optimization tool with auto dark mode and adva
 ### UI Features
 - **Auto Dark Mode**: Automatically matches your Windows theme
 - **Modern Interface**: Clean, easy-to-use design
-- **Fast Performance**: Optimized build (~2.6MB, loads instantly)
+- **Fast Performance**: Optimized build (loads instantly)
 
 ## Download & Run
 
