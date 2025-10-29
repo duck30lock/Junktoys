@@ -6,7 +6,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 
 ### 🔥 NEW CRAZY FEATURES! 🔥
 
-#### 🎮 Game Mode Booster
+#### Game Mode Booster
 - One-click performance mode for gaming
 - Auto-kill non-gaming processes
 - Set high CPU priority for games
@@ -14,7 +14,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - GPU & network optimization
 - Automatic game detection
 
-#### 💾 RAM Turbo
+#### RAM Turbo
 - Real-time RAM usage monitoring
 - Aggressive memory compression
 - Auto-clear RAM at threshold
@@ -22,14 +22,14 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Top memory consumers list
 - Standby memory clearing
 
-#### ❄️ Process Freezer
+#### Process Freezer
 - Suspend/resume processes instead of killing
 - Keep apps open without using resources
 - Batch freeze non-essential apps
 - Memory usage tracking for frozen processes
 - Safe process detection
 
-#### 🌐 Network Tools Suite
+#### Network Tools Suite
 - Quick DNS switcher (Cloudflare, Google, Quad9)
 - Real-time network speed monitor
 - Ping test utility
@@ -37,7 +37,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Active connections viewer
 - Reset network settings
 
-#### 📊 System Monitor Dashboard
+#### System Monitor Dashboard
 - Real-time CPU/GPU/RAM/Disk monitoring
 - Temperature monitoring (CPU & GPU)
 - System information display
@@ -45,7 +45,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Live performance graphs
 - Uptime tracking
 
-#### 🤖 Auto-Pilot Mode
+#### Auto-Pilot Mode
 - Scheduled optimizations (daily/weekly)
 - Smart resource management
 - Auto-kill apps on low battery
@@ -53,7 +53,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Idle-time optimization
 - Activity logging
 
-#### 🧹 Registry Turbo Cleaner
+#### Registry Turbo Cleaner
 - Deep registry scan
 - Remove invalid entries
 - One-click registry optimization
@@ -61,14 +61,14 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Registry compaction
 - Permission repair
 
-#### 💼 Custom Profiles
+#### Custom Profiles
 - Save/load optimization profiles
 - Preset profiles (Gaming, Work, Battery Saver)
 - Profile export/import
 - Quick profile switching
 - Auto-apply on startup
 
-#### 📁 Disk Space Analyzer
+#### Disk Space Analyzer
 - Visual storage analysis
 - Largest folders detection
 - Drive usage statistics
@@ -76,7 +76,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 - Empty recycle bin
 - Clear browser cache
 
-#### ⚡ System Tweaker Pro
+#### System Tweaker Pro
 - Advanced Windows tweaks
 - Hidden settings unlocked
 - Performance optimizations
