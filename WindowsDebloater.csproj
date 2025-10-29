@@ -5,14 +5,12 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <AssemblyName>Junktoys</AssemblyName>
+    <AssemblyName>WindowsDebloater</AssemblyName>
     <RootNamespace>WindowsDebloater</RootNamespace>
     <Authors>Junktoys Team</Authors>
     <Product>Junktoys</Product>
-    <Description>A PowerToys-style Windows debloating utility</Description>
-    <Version>1.0.0</Version>
-    <Platforms>x64</Platforms>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Description>Ultimate Windows Optimizer with 10+ Advanced Features</Description>
+    <Version>2.0.0</Version>
     <SelfContained>true</SelfContained>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>false</PublishTrimmed>

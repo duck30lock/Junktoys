@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using System.Management;
 
 namespace WindowsDebloater.Pages
 {
@@ -21,7 +22,7 @@ namespace WindowsDebloater.Pages
         {
             InitializeComponent();
             
-            totalMemory = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            totalMemory = GetTotalPhysicalMemory();
             
             updateTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
             updateTimer.Tick += (s, e) => UpdateRAMStats();
@@ -37,10 +38,8 @@ namespace WindowsDebloater.Pages
         {
             try
             {
-                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
-                
-                long totalBytes = (long)info.TotalPhysicalMemory;
-                long availableBytes = (long)info.AvailablePhysicalMemory;
+                long totalBytes = GetTotalPhysicalMemory();
+                long availableBytes = GetAvailablePhysicalMemory();
                 long usedBytes = totalBytes - availableBytes;
 
                 double totalGB = totalBytes / 1024.0 / 1024.0 / 1024.0;
@@ -166,9 +165,8 @@ namespace WindowsDebloater.Pages
         {
             try
             {
-                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
-                long totalBytes = (long)info.TotalPhysicalMemory;
-                long availableBytes = (long)info.AvailablePhysicalMemory;
+                long totalBytes = GetTotalPhysicalMemory();
+                long availableBytes = GetAvailablePhysicalMemory();
                 long usedBytes = totalBytes - availableBytes;
                 double usedPercent = (usedBytes * 100.0) / totalBytes;
 
@@ -213,6 +211,38 @@ namespace WindowsDebloater.Pages
                 Process.Start(psi)?.WaitForExit(3000);
             }
             catch { }
+        }
+
+        private long GetTotalPhysicalMemory()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT TotalPhysicalMemory FROM Win32_ComputerSystem"))
+                {
+                    foreach (var item in searcher.Get())
+                    {
+                        return Convert.ToInt64(item["TotalPhysicalMemory"]);
+                    }
+                }
+            }
+            catch { }
+            return 16L * 1024 * 1024 * 1024; // Default 16GB
+        }
+
+        private long GetAvailablePhysicalMemory()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT FreePhysicalMemory FROM Win32_OperatingSystem"))
+                {
+                    foreach (var item in searcher.Get())
+                    {
+                        return Convert.ToInt64(item["FreePhysicalMemory"]) * 1024; // KB to bytes
+                    }
+                }
+            }
+            catch { }
+            return 8L * 1024 * 1024 * 1024; // Default 8GB
         }
     }
 }

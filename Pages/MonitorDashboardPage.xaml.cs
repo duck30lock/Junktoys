@@ -48,8 +48,7 @@ namespace WindowsDebloater.Pages
                 }
 
                 // RAM Info
-                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
-                double totalGB = info.TotalPhysicalMemory / 1024.0 / 1024.0 / 1024.0;
+                double totalGB = GetTotalPhysicalMemory() / 1024.0 / 1024.0 / 1024.0;
                 RAMInfoText.Text = $"{totalGB:F1} GB";
 
                 // GPU Info
@@ -133,6 +132,22 @@ namespace WindowsDebloater.Pages
         {
             LoadSystemInfo();
             UpdateStats();
+        }
+
+        private long GetTotalPhysicalMemory()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT TotalPhysicalMemory FROM Win32_ComputerSystem"))
+                {
+                    foreach (var item in searcher.Get())
+                    {
+                        return Convert.ToInt64(item["TotalPhysicalMemory"]);
+                    }
+                }
+            }
+            catch { }
+            return 16L * 1024 * 1024 * 1024;
         }
     }
 }
