@@ -81,3 +81,13 @@ $RECYCLE.BIN/
 
 # Publish results
 publish/
+
+# Build scripts and releases
+build-*.ps1
+releases/
+PUSH_WHEN_READY.bat
+MANUAL_UPLOAD_GUIDE.md
+HOW_TO_UPLOAD_TO_GITHUB.md
+RELEASE_NOTES_*.md
+GITHUB_RELEASE_TEMPLATE.md
+WHATS_NEW.md

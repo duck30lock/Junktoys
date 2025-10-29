@@ -1,6 +1,6 @@
-#  Junktoys - Ultimate Windows Optimizer
+# 🎃 Junktoys - Halloween Edition 🎃
 
-A powerful Windows debloating and optimization tool with auto dark mode and advanced features.
+A powerful Windows debloating and optimization tool with spooky Halloween theme and advanced features!
 
 ## Features
 

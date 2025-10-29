@@ -6,10 +6,24 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources />
+                <ui:ThemeResources RequestedTheme="Dark"/>
                 <ui:XamlControlsResources />
                 <ResourceDictionary Source="Styles/NavigationStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            <!-- 🎃 Halloween Theme Colors 🎃 -->
+            <SolidColorBrush x:Key="HalloweenOrange" Color="#FF6600"/>
+            <SolidColorBrush x:Key="HalloweenOrangeDark" Color="#CC5500"/>
+            <SolidColorBrush x:Key="HalloweenBlack" Color="#0D0D0D"/>
+            <SolidColorBrush x:Key="HalloweenGray" Color="#1A1A1A"/>
+            <SolidColorBrush x:Key="SpookyPurple" Color="#8B00FF"/>
+            
+            <!-- Override system accent color with Halloween orange -->
+            <SolidColorBrush x:Key="SystemAccentColorLight1" Color="#FF8800"/>
+            <SolidColorBrush x:Key="SystemAccentColorLight2" Color="#FFAA00"/>
+            <SolidColorBrush x:Key="SystemAccentColorDark1" Color="#DD5500"/>
+            <SolidColorBrush x:Key="SystemAccentColorDark2" Color="#BB4400"/>
+            <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#FF6600"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

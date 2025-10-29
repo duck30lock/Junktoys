@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="Junktoys" 
+        Title="🎃 Junktoys - Halloween Edition 🎃" 
         Height="700" 
         Width="1100"
         MinHeight="600"
-        MinWidth="900">
+        MinWidth="900"
+        Background="#1A1A1A">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,14 +17,15 @@
         </Grid.ColumnDefinitions>
 
         <!-- Simplified Navigation -->
-        <Border Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+        <Border Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="#FF6600" Background="#0D0D0D">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel Margin="10">
-                    <TextBlock Text="🧹 Junktoys" FontSize="20" FontWeight="Bold" Margin="10"/>
+                    <TextBlock Text="🎃 Junktoys 🎃" FontSize="20" FontWeight="Bold" Margin="10" Foreground="#FF6600"/>
                     
-                    <Button Content="⚡ Quick Clean" Margin="5" Padding="12,8" Click="QuickClean_Click" 
-                           Style="{StaticResource AccentButtonStyle}"/>
-                    <Separator Margin="10,15"/>
+                    <Button Content="🎃 Quick Clean" Margin="5" Padding="12,8" Click="QuickClean_Click" 
+                           Background="#FF6600" Foreground="White" FontWeight="Bold"
+                           BorderBrush="#FF8800" BorderThickness="2"/>
+                    <Separator Margin="10,15" Background="#FF6600"/>
                     
                     <!-- Original Features -->
                     <RadioButton x:Name="BackgroundAppsBtn" Content="Background Apps" Style="{StaticResource NavigationRadioButtonStyle}"
@@ -37,8 +39,8 @@
                     <RadioButton Content="⚡ Advanced" Style="{StaticResource NavigationRadioButtonStyle}"
                                Checked="Navigation_Checked" Tag="Advanced" FontWeight="Bold"/>
                     
-                    <Separator Margin="10,15"/>
-                    <TextBlock Text="🔥 NEW FEATURES" FontSize="11" FontWeight="Bold" Margin="10,5" Foreground="#FF6B6B"/>
+                    <Separator Margin="10,15" Background="#FF6600"/>
+                    <TextBlock Text="👻 SPOOKY FEATURES 👻" FontSize="11" FontWeight="Bold" Margin="10,5" Foreground="#FF6600"/>
                     
                     <!-- New Crazy Features -->
                     <RadioButton Content="🎮 Game Mode" Style="{StaticResource NavigationRadioButtonStyle}"
@@ -62,7 +64,7 @@
                     <RadioButton Content="⚡ System Tweaker" Style="{StaticResource NavigationRadioButtonStyle}"
                                Checked="Navigation_Checked" Tag="SystemTweaker"/>
                     
-                    <Separator Margin="10,15"/>
+                    <Separator Margin="10,15" Background="#FF6600"/>
                     <RadioButton Content="Settings" Style="{StaticResource NavigationRadioButtonStyle}"
                                Checked="Navigation_Checked" Tag="Settings"/>
                 </StackPanel>

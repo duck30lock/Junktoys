@@ -21,11 +21,11 @@ Since both your GitHub accounts are suspended, here's how to upload once you cre
 Open PowerShell in `c:\Users\vern\Documents\Junktoys` and run:
 
 ```powershell
-# Replace YOUR_NEW_USERNAME with your actual GitHub username
-git remote set-url origin https://github.com/YOUR_NEW_USERNAME/Junktoys.git
+# Already configured for 30duck account!
+git push -u origin main
 
-# Push all code
-git push -u origin main --force
+# Or if you need to change it:
+# git remote set-url origin https://github.com/YOUR_USERNAME/Junktoys.git
 ```
 
 ### Step 4: Create GitHub Release
