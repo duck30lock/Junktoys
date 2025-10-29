@@ -115,7 +115,7 @@ A powerful Windows debloating and optimization tool with spooky Halloween theme 
 
 ### For Users (GitHub Releases)
 
-1. **Download** `Junktoys.exe` from [Releases](https://github.com/goenvim/junktoys/releases)
+1. **Download** `Junktoys.exe` from [Releases](https://github.com/duck30lock/junktoys/releases)
 2. **Right-click** `Junktoys.exe` → **Run as administrator**
 3. Enjoy!
 
